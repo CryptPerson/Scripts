@@ -30,3 +30,14 @@ while true do
             end
         end
     end
+
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Rebirth"):FireServer()
+    task.wait(0.1)
+
+    local args = {
+        [1] = "2"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GemUpgrade"):FireServer(unpack(args))
+
+    task.wait(0.1) -- Adjust wait time to prevent excessive server requests
+end
